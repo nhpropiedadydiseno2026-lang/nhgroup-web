@@ -105,6 +105,18 @@ export default function Hero() {
         ))}
       </div>
 
+      {/* ── LOGO OFICIAL sobre el carrusel ── */}
+      <div className="absolute top-6 right-20 z-20 hidden md:block">
+        <motion.img
+          src="/gallery/Logo NH Premium.png"
+          alt="NHGroup Logo"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          className="h-16 w-auto object-contain drop-shadow-lg"
+        />
+      </div>
+
       {/* Label actual */}
       <AnimatePresence mode="wait">
         <motion.div key={`lbl-${current}`}
