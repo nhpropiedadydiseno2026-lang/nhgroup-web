@@ -52,7 +52,7 @@ export default function About() {
 
             <p className="text-ink-40 text-lg leading-relaxed mb-10">
               <span className="text-ink font-semibold">Querétaro / Toluca.</span>{' '}
-              Presencia directa en los mercados de mayor plusvalía en México central.
+              Presencia directa en los mercados de mayor plusvalía de la región.
             </p>
 
             <motion.a

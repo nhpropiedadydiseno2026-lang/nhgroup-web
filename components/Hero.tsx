@@ -5,14 +5,38 @@ import { ArrowRight, MapPin, Phone, ChevronLeft, ChevronRight } from 'lucide-rea
 import { useState, useEffect } from 'react'
 
 const slides = [
-  { src: '/gallery/svc-rentas.jpg',       label: 'Rentas — Opciones a tu medida' },
-  { src: '/gallery/svc-casas.jpg',        label: 'Casas en Venta' },
-  { src: '/gallery/svc-depas.jpg',        label: 'Departamentos listos' },
-  { src: '/gallery/svc-terrenos.jpg',     label: 'Terrenos verificados' },
-  { src: '/gallery/svc-construccion.jpg', label: 'Construcción residencial' },
-  { src: '/gallery/svc-preventas.jpg',    label: 'Preventas — Precio fijo' },
-  { src: '/gallery/svc-vende.jpg',        label: 'Vende con nosotros' },
-  { src: '/gallery/svc-inversion.jpg',    label: 'Inversión Estratégica' },
+  {
+    src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=85&fit=crop',
+    label: 'Residencias de lujo',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85&fit=crop',
+    label: 'Casas en venta',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=1920&q=85&fit=crop',
+    label: 'Propiedades premium',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&q=85&fit=crop',
+    label: 'Tu próxima inversión',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=85&fit=crop',
+    label: 'Construcción residencial',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=85&fit=crop',
+    label: 'Arquitectura moderna',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1920&q=85&fit=crop',
+    label: 'Estilo de vida premium',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920&q=85&fit=crop',
+    label: 'Desarrollos residenciales',
+  },
 ]
 
 export default function Hero() {
@@ -46,21 +70,11 @@ export default function Hero() {
             transition={{ duration: 1.1, ease: 'easeInOut' }}
             className="absolute inset-0"
           >
-            {/* Fondo difuminado que llena el espacio vacío */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={slides[current].src}
-              alt=""
-              aria-hidden
-              className="absolute inset-0 w-full h-full object-cover object-center"
-              style={{ filter: 'blur(28px)', transform: 'scale(1.1)', opacity: 0.6 }}
-            />
-            {/* Imagen principal sin recorte — se ve completa */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={slides[current].src}
               alt={slides[current].label}
-              className="absolute inset-0 w-full h-full object-contain object-center"
+              className="absolute inset-0 w-full h-full object-cover object-center"
             />
           </motion.div>
         </AnimatePresence>
@@ -111,7 +125,7 @@ export default function Hero() {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/25 mb-7">
               <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-              <span className="text-gold-light text-xs tracking-[0.2em] uppercase font-semibold">Querétaro · Toluca · México</span>
+              <span className="text-gold-light text-xs tracking-[0.2em] uppercase font-semibold">Querétaro · Toluca</span>
             </motion.div>
 
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
