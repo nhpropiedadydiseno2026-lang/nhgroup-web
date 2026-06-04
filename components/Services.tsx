@@ -5,14 +5,62 @@ import { motion, useInView } from 'framer-motion'
 import { Home, TrendingUp, MapPin, Building2, Layers, Tag, Hammer, BarChart3 } from 'lucide-react'
 
 const services = [
-  { icon: Home, title: 'Rentas', sub: 'Opciones a tu medida', desc: 'Opciones flexibles que se ajustan a tu presupuesto real. Sin forzar categorías que no encajan con tu situación.' },
-  { icon: TrendingUp, title: 'Preventas', sub: 'Precio fijo antes del mercado', desc: 'Invierte desde el inicio y asegura el precio antes de que se mueva. Estrategia, no suerte.' },
-  { icon: MapPin, title: 'Terrenos', sub: 'El espacio para tu proyecto', desc: 'Terrenos verificados con documentación en orden. Opciones que ya pasaron el filtro.' },
-  { icon: Building2, title: 'Casas en Venta', sub: 'Las mejores ubicaciones', desc: 'Casas seleccionadas por ubicación y precio justo. Decides con información clara.' },
-  { icon: Layers, title: 'Depas en Venta', sub: 'Departamentos listos', desc: 'Departamentos modernos con todo en regla. Precio y entrega explicados desde el primer contacto.' },
-  { icon: Tag, title: 'Vende con Nosotros', sub: 'Tu propiedad vendida', desc: 'Precio correcto, difusión dirigida, cierre limpio. Gestionamos el proceso completo.' },
-  { icon: Hammer, title: 'Construcción', sub: 'Proyectos residenciales', desc: 'Servicio integral orientado a proyectos residenciales y de inversión.' },
-  { icon: BarChart3, title: 'Inversión Estratégica', sub: 'Planes personalizados', desc: 'Planes de inversión inmobiliaria según tu presupuesto, ingresos y objetivos.' },
+  {
+    icon: Home,
+    title: 'Rentas',
+    sub: 'Opciones a tu medida',
+    desc: 'Opciones flexibles que se ajustan a tu presupuesto real. Sin forzar categorías que no encajan.',
+    img: '/gallery/interior-4.jpg',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Preventas',
+    sub: 'Precio fijo antes del mercado',
+    desc: 'Invierte desde el inicio y asegura el precio antes de que se mueva. Estrategia, no suerte.',
+    img: '/gallery/aerial-1.jpg',
+  },
+  {
+    icon: MapPin,
+    title: 'Terrenos',
+    sub: 'El espacio para tu proyecto',
+    desc: 'Terrenos verificados con documentación en orden. Opciones que ya pasaron el filtro.',
+    img: '/gallery/aerial-2.jpg',
+  },
+  {
+    icon: Building2,
+    title: 'Casas en Venta',
+    sub: 'Las mejores ubicaciones',
+    desc: 'Casas seleccionadas por ubicación y precio justo. Decides con información clara.',
+    img: '/gallery/exterior-1.jpg',
+  },
+  {
+    icon: Layers,
+    title: 'Depas en Venta',
+    sub: 'Departamentos listos',
+    desc: 'Departamentos modernos con todo en regla. Precio y entrega explicados desde el primer contacto.',
+    img: '/gallery/interior-1.jpg',
+  },
+  {
+    icon: Tag,
+    title: 'Vende con Nosotros',
+    sub: 'Tu propiedad vendida',
+    desc: 'Precio correcto, difusión dirigida, cierre limpio. Gestionamos el proceso completo.',
+    img: '/gallery/exterior-2.jpg',
+  },
+  {
+    icon: Hammer,
+    title: 'Construcción',
+    sub: 'Proyectos residenciales',
+    desc: 'Servicio integral orientado a proyectos residenciales y de inversión.',
+    img: '/gallery/exterior-3.jpg',
+  },
+  {
+    icon: BarChart3,
+    title: 'Inversión Estratégica',
+    sub: 'Planes personalizados',
+    desc: 'Planes de inversión inmobiliaria según tu presupuesto, ingresos y objetivos.',
+    img: '/gallery/aerial-3.jpg',
+  },
 ]
 
 const container = {
@@ -30,7 +78,6 @@ export default function Services() {
 
   return (
     <section id="servicios" className="py-28 bg-cream relative overflow-hidden">
-      {/* Gold accent top */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6">
@@ -54,12 +101,13 @@ export default function Services() {
           </p>
         </motion.div>
 
+        {/* Grid con imágenes */}
         <motion.div
           ref={ref}
           variants={container}
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"
         >
           {services.map((s, i) => {
             const Icon = s.icon
@@ -67,15 +115,36 @@ export default function Services() {
               <motion.div
                 key={i}
                 variants={item}
-                whileHover={{ y: -6, boxShadow: '0 16px 40px rgba(201,168,76,0.12)', borderColor: 'rgba(201,168,76,0.5)' }}
-                className="bg-white rounded-2xl p-6 border border-cream-border shadow-sm transition-all duration-300 group cursor-default"
+                whileHover={{ y: -8, boxShadow: '0 24px 50px rgba(0,0,0,0.13)' }}
+                className="bg-white rounded-2xl overflow-hidden border border-cream-border shadow-sm transition-all duration-300 group cursor-default"
               >
-                <div className="w-12 h-12 rounded-xl bg-cream-dark flex items-center justify-center mb-5 group-hover:bg-gold/10 transition-colors duration-300">
-                  <Icon size={22} className="text-gold" />
+                {/* Imagen del servicio */}
+                <div className="relative h-44 overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    onError={(e) => {
+                      const el = e.target as HTMLImageElement
+                      el.parentElement!.style.background = 'linear-gradient(135deg, #f2efe8 0%, #e8e4dc 100%)'
+                      el.style.display = 'none'
+                    }}
+                  />
+                  {/* Overlay suave */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  {/* Icono sobre imagen */}
+                  <div className="absolute bottom-3 left-3 w-10 h-10 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-sm">
+                    <Icon size={18} className="text-gold" />
+                  </div>
                 </div>
-                <div className="text-ink font-bold text-base mb-1">{s.title}</div>
-                <div className="text-gold-dark text-xs font-semibold mb-3 tracking-wide uppercase">{s.sub}</div>
-                <p className="text-ink-40 text-sm leading-relaxed">{s.desc}</p>
+
+                {/* Texto */}
+                <div className="p-5">
+                  <div className="text-ink font-bold text-base mb-1">{s.title}</div>
+                  <div className="text-gold-dark text-xs font-semibold mb-3 tracking-wide uppercase">{s.sub}</div>
+                  <p className="text-ink-40 text-sm leading-relaxed">{s.desc}</p>
+                </div>
               </motion.div>
             )
           })}

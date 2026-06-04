@@ -1,7 +1,7 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
+import VideoSection from '@/components/VideoSection'
 import Services from '@/components/Services'
-import Gallery from '@/components/Gallery'
 import About from '@/components/About'
 import Process from '@/components/Process'
 import Contact from '@/components/Contact'
@@ -12,8 +12,8 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Navbar />
       <Hero />
+      <VideoSection />
       <Services />
-      <Gallery />
       <About />
       <Process />
       <Contact />
