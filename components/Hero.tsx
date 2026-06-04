@@ -5,38 +5,30 @@ import { ArrowRight, MapPin, Phone, ChevronLeft, ChevronRight } from 'lucide-rea
 import { useState, useEffect } from 'react'
 
 const slides = [
-  {
-    src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=85&fit=crop',
-    label: 'Residencias de lujo',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85&fit=crop',
-    label: 'Casas en venta',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=1920&q=85&fit=crop',
-    label: 'Propiedades premium',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&q=85&fit=crop',
-    label: 'Tu próxima inversión',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=85&fit=crop',
-    label: 'Construcción residencial',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=85&fit=crop',
-    label: 'Arquitectura moderna',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1920&q=85&fit=crop',
-    label: 'Estilo de vida premium',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920&q=85&fit=crop',
-    label: 'Desarrollos residenciales',
-  },
+  // Exteriores
+  { src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=85&fit=crop', label: 'Residencias de lujo' },
+  { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85&fit=crop', label: 'Casas en venta' },
+  { src: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&q=85&fit=crop', label: 'Tu próxima inversión' },
+  { src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920&q=85&fit=crop', label: 'Desarrollos residenciales' },
+  { src: 'https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=1920&q=85&fit=crop', label: 'Propiedades premium' },
+  { src: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1920&q=85&fit=crop', label: 'Estilo de vida premium' },
+  { src: 'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=1920&q=85&fit=crop', label: 'Casa familiar moderna' },
+  { src: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1920&q=85&fit=crop', label: 'Diseño contemporáneo' },
+  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=85&fit=crop', label: 'Minimalismo residencial' },
+  { src: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1920&q=85&fit=crop', label: 'Casas con jardín' },
+  // Interiores
+  { src: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=85&fit=crop', label: 'Interiores modernos' },
+  { src: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1920&q=85&fit=crop', label: 'Sala de estar de lujo' },
+  { src: 'https://images.unsplash.com/photo-1615873968403-89e068629265?w=1920&q=85&fit=crop', label: 'Cocina de diseño' },
+  { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=85&fit=crop', label: 'Espacios luminosos' },
+  { src: 'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1920&q=85&fit=crop', label: 'Recámaras premium' },
+  { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=85&fit=crop', label: 'Baños de lujo' },
+  // Albercas y amenidades
+  { src: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=85&fit=crop', label: 'Alberca privada' },
+  { src: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1920&q=85&fit=crop', label: 'Terraza con vista' },
+  // Construcción y terrenos
+  { src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=85&fit=crop', label: 'Construcción residencial' },
+  { src: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=85&fit=crop', label: 'Arquitectura moderna' },
 ]
 
 export default function Hero() {
