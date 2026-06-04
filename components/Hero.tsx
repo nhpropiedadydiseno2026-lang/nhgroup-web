@@ -40,18 +40,27 @@ export default function Hero() {
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={current}
-            custom={direction}
-            initial={{ opacity: 0, scale: 1.04 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.1, ease: 'easeInOut' }}
             className="absolute inset-0"
           >
+            {/* Fondo difuminado que llena el espacio vacío */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={slides[current].src}
+              alt=""
+              aria-hidden
+              className="absolute inset-0 w-full h-full object-cover object-center"
+              style={{ filter: 'blur(28px)', transform: 'scale(1.1)', opacity: 0.6 }}
+            />
+            {/* Imagen principal sin recorte — se ve completa */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={slides[current].src}
               alt={slides[current].label}
-              className="w-full h-full object-cover object-center"
+              className="absolute inset-0 w-full h-full object-contain object-center"
             />
           </motion.div>
         </AnimatePresence>
