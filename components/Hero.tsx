@@ -5,12 +5,14 @@ import { ArrowRight, MapPin, Phone, ChevronLeft, ChevronRight } from 'lucide-rea
 import { useState, useEffect } from 'react'
 
 const slides = [
-  { src: '/gallery/interior-1.jpg', label: 'Sala con vista al lago' },
-  { src: '/gallery/exterior-1.jpg', label: 'Terraza con alberca premium' },
-  { src: '/gallery/interior-2.jpg', label: 'Residencia de piedra natural' },
+  { src: '/gallery/real-1.jpg', label: 'Sala con vista al lago' },
+  { src: '/gallery/real-3.jpg', label: 'Terraza con alberca premium' },
+  { src: '/gallery/real-2.jpg', label: 'Residencia de piedra natural' },
+  { src: '/gallery/interior-1.jpg', label: 'Interiores de lujo' },
+  { src: '/gallery/real-4.jpg', label: 'Jardín tropical con alberca' },
+  { src: '/gallery/real-5.jpg', label: 'Sala con techo de cristal' },
   { src: '/gallery/aerial-1.jpg', label: 'Desarrollo residencial Querétaro' },
-  { src: '/gallery/exterior-2.jpg', label: 'Jardín tropical con alberca' },
-  { src: '/gallery/interior-4.jpg', label: 'Sala abierta al jardín' },
+  { src: '/gallery/real-6.jpg', label: 'Sala abierta al jardín' },
 ]
 
 export default function Hero() {
