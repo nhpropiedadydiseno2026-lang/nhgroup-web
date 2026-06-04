@@ -36,16 +36,13 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
-          <motion.a href="#inicio" whileHover={{ scale: 1.03 }} className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-sm bg-gradient-gold flex items-center justify-center shadow-sm">
-              <span className="text-white font-black text-sm tracking-tight">NH</span>
-            </div>
-            <div className="leading-tight">
-              <div className="text-ink font-bold text-base tracking-wide">
-                NH<span className="gold-gradient">GROUP</span>
-              </div>
-              <div className="text-ink-40 text-[10px] uppercase tracking-[0.15em] leading-none">Bienes Raíces</div>
-            </div>
+          <motion.a href="#inicio" whileHover={{ scale: 1.03 }} className="flex items-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/gallery/Logo NH Premium.png"
+              alt="NHGroup Bienes Raíces"
+              className="h-12 w-auto object-contain drop-shadow-sm"
+            />
           </motion.a>
 
           {/* Desktop links */}
