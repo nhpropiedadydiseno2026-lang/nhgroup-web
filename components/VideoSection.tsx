@@ -53,7 +53,7 @@ export default function VideoSection() {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="/video-construccion.mp4" type="video/mp4" />
+            <source src="/gallery/video-construccion.mp4" type="video/mp4" />
           </video>
         </motion.div>
 
