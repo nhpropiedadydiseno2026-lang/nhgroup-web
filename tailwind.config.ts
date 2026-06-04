@@ -14,12 +14,17 @@ const config: Config = {
           light: '#E4C97E',
           dark: '#9A7A2E',
         },
-        dark: {
+        cream: {
+          DEFAULT: '#F8F6F1',
+          dark: '#F2EFE8',
+          border: '#E8E4DC',
+        },
+        ink: {
           DEFAULT: '#0A0A0A',
-          100: '#111111',
-          200: '#1A1A1A',
-          300: '#242424',
-          400: '#2E2E2E',
+          80: '#1A1A1A',
+          60: '#3D3D3D',
+          40: '#6B6B6B',
+          20: '#9E9E9E',
         },
       },
       fontFamily: {
@@ -28,21 +33,7 @@ const config: Config = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-gold': 'linear-gradient(135deg, #C9A84C 0%, #E4C97E 50%, #9A7A2E 100%)',
-      },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'shimmer': 'shimmer 2s linear infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
-        shimmer: {
-          '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' },
-        },
+        'gradient-gold': 'linear-gradient(135deg, #9A7A2E 0%, #C9A84C 50%, #E4C97E 100%)',
       },
     },
   },

@@ -6,10 +6,13 @@
   --gold: #C9A84C;
   --gold-light: #E4C97E;
   --gold-dark: #9A7A2E;
-  --dark: #0A0A0A;
-  --dark-100: #111111;
-  --dark-200: #1A1A1A;
-  --dark-300: #242424;
+  --white: #FFFFFF;
+  --off-white: #F8F6F1;
+  --light: #F2EFE8;
+  --black: #0A0A0A;
+  --black-80: #1A1A1A;
+  --gray: #6B6B6B;
+  --gray-light: #E8E4DC;
 }
 
 * {
@@ -21,12 +24,12 @@
 html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: #C9A84C #111111;
+  scrollbar-color: #C9A84C #E8E4DC;
 }
 
 body {
-  background: #0A0A0A;
-  color: #ffffff;
+  background: #FFFFFF;
+  color: #0A0A0A;
   font-family: var(--font-inter), system-ui, sans-serif;
   overflow-x: hidden;
 }
@@ -35,7 +38,7 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #111111;
+  background: #F2EFE8;
 }
 ::-webkit-scrollbar-thumb {
   background: #C9A84C;
@@ -43,34 +46,23 @@ body {
 }
 
 .gold-gradient {
-  background: linear-gradient(135deg, #C9A84C 0%, #E4C97E 50%, #9A7A2E 100%);
+  background: linear-gradient(135deg, #9A7A2E 0%, #C9A84C 50%, #E4C97E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(201, 168, 76, 0.15);
+  border: 1px solid rgba(201, 168, 76, 0.25);
 }
 
 .glass-dark {
-  background: rgba(10, 10, 10, 0.8);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(201, 168, 76, 0.1);
-}
-
-.noise {
-  position: relative;
-}
-.noise::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 1;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
 }
 
 @layer utilities {
