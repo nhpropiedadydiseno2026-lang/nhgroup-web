@@ -79,7 +79,7 @@ export default function VideoSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.4, duration: 0.7 }}
-          className="absolute bottom-10 left-8 right-8 md:right-auto md:max-w-xl"
+          className="absolute bottom-6 left-4 right-4 md:left-8 md:right-auto md:max-w-xl"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold text-white leading-tight mb-4 drop-shadow-lg">
             Construimos con la{' '}

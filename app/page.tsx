@@ -4,6 +4,7 @@ import VideoSection from '@/components/VideoSection'
 import Services from '@/components/Services'
 import About from '@/components/About'
 import Process from '@/components/Process'
+import Precalificador from '@/components/Precalificador'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
@@ -16,6 +17,7 @@ export default function Home() {
       <VideoSection />
       <About />
       <Process />
+      <Precalificador />
       <Contact />
       <Footer />
     </main>
