@@ -7,7 +7,7 @@ import { Search, MapPin, BedDouble, Bath, Maximize, ExternalLink, Building2, Loa
 const SUPABASE_URL = 'https://tsjykudvusxbrwspfrhn.supabase.co'
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzanlrdWR2dXN4YnJ3c3BmcmhuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk2NzM1NzEsImV4cCI6MjA5NTI0OTU3MX0.N9aHc0sNH8ETDQUnq5aYebugWYq0k7sXsFmG5iGxMHo'
 
-const INMUEBLES24_URL = 'https://www.inmuebles24.com/inmobiliarias/nh-bienes-raices'
+const INMUEBLES24_URL = 'https://www.inmuebles24.com/inmobiliarias/proyecto-inmobiliario_50251463-inmuebles.html'
 
 type Propiedad = {
   id: string
