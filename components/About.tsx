@@ -3,7 +3,7 @@
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import {
-  Shield, Award, Users, TrendingUp,
+  Award, Users, TrendingUp,
   CheckCircle2, Star, MapPin, Clock
 } from 'lucide-react'
 import Image from 'next/image'
@@ -22,12 +22,6 @@ const credentials = [
   'Gestión legal integral sin costos previos',
   'Cierre promedio en 45 días',
   'Comisión fija acordada por escrito',
-]
-
-const trustBadges = [
-  { icon: Shield, label: 'Transparencia total', color: '#C9A84C' },
-  { icon: Award, label: 'Profesionalismo certificado', color: '#C9A84C' },
-  { icon: CheckCircle2, label: 'Sin costo hasta concretar', color: '#C9A84C' },
 ]
 
 export default function About() {
@@ -231,42 +225,6 @@ export default function About() {
             )
           })}
         </div>
-
-        {/* Trust badges */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="rounded-3xl bg-gradient-to-br from-cream-dark to-white border border-cream-border p-10"
-        >
-          <div className="text-center mb-8">
-            <div className="text-ink-40 text-xs tracking-[0.25em] uppercase font-semibold mb-2">Nuestros compromisos</div>
-            <h3 className="font-display text-2xl font-bold text-ink">Trabajamos bajo principios irrompibles</h3>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {trustBadges.map((badge, i) => {
-              const Icon = badge.icon
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.12 }}
-                  whileHover={{ y: -3 }}
-                  className="flex flex-col items-center gap-4 p-6 bg-white rounded-2xl border border-cream-border shadow-sm hover:shadow-md transition-all duration-300 text-center"
-                >
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center"
-                    style={{ background: 'rgba(201,168,76,0.08)' }}>
-                    <Icon size={24} className="text-gold" />
-                  </div>
-                  <span className="text-ink font-semibold text-sm leading-snug">{badge.label}</span>
-                </motion.div>
-              )
-            })}
-          </div>
-        </motion.div>
 
       </div>
     </section>

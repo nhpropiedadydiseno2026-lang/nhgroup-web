@@ -4,12 +4,15 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
+const CLIENTE_PORTAL_URL = 'https://app.nhgroup.com.mx/?modo=cliente&vista=registro'
+
 const navLinks = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Servicios', href: '#servicios' },
   { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Proceso', href: '#proceso' },
+  { label: 'Proceso', href: '#proceso-completo' },
   { label: '🏦 Crédito', href: '#precalificador' },
+  { label: '👤 Portal de Clientes', href: CLIENTE_PORTAL_URL, externo: true },
   { label: 'Contacto', href: '#contacto' },
 ]
 
@@ -52,6 +55,7 @@ export default function Navbar() {
               <motion.a
                 key={link.href}
                 href={link.href}
+                {...(link.externo ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 whileHover={{ y: -1 }}
                 className="text-ink-60 hover:text-gold text-sm tracking-wide transition-colors duration-200 relative group font-medium"
               >
@@ -94,6 +98,7 @@ export default function Navbar() {
               <motion.a
                 key={link.href}
                 href={link.href}
+                {...(link.externo ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.08 }}

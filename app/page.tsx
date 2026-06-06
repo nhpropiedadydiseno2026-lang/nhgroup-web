@@ -3,7 +3,6 @@ import Hero from '@/components/Hero'
 import Catalogo from '@/components/Catalogo'
 import Services from '@/components/Services'
 import About from '@/components/About'
-import Process from '@/components/Process'
 import ProcesoCompleto from '@/components/ProcesoCompleto'
 import Precalificador from '@/components/Precalificador'
 import Contact from '@/components/Contact'
@@ -17,7 +16,6 @@ export default function Home() {
       <Catalogo />
       <Services />
       <About />
-      <Process />
       <ProcesoCompleto />
       <Precalificador />
       <Contact />

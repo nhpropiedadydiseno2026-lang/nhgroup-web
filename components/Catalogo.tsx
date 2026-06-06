@@ -148,9 +148,6 @@ export default function Catalogo() {
         >
           <span className="text-gold-dark uppercase tracking-[0.2em] text-sm font-medium">Catálogo</span>
           <h2 className="font-display text-3xl md:text-5xl text-ink mt-2">Propiedades disponibles</h2>
-          <p className="text-ink-40 mt-3 max-w-2xl mx-auto">
-            Resultados combinados de nuestro CRM, EasyBroker e Inmuebles24 — actualizados directamente desde cada fuente.
-          </p>
         </motion.div>
 
         {/* Filtros */}
