@@ -42,7 +42,7 @@ export default function Navbar() {
             <img
               src="/gallery/Logo NH Premium.png"
               alt="NHGroup Bienes Raíces"
-              className="h-12 w-auto object-contain drop-shadow-sm"
+              className="h-20 w-auto object-contain drop-shadow-sm"
             />
           </motion.a>
 
@@ -64,7 +64,7 @@ export default function Navbar() {
           {/* CTA */}
           <div className="flex items-center gap-3">
             <motion.a
-              href="https://app.nhgroup.com.mx/login"
+              href="https://app.nhgroup.shop"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
@@ -107,7 +107,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              href="https://app.nhgroup.com.mx/login"
+              href="https://app.nhgroup.shop"
               target="_blank"
               className="mt-4 px-8 py-3 rounded-full text-white font-bold bg-gradient-gold text-sm"
               onClick={() => setOpen(false)}
