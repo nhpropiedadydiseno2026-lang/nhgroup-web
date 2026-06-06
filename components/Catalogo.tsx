@@ -113,7 +113,7 @@ export default function Catalogo() {
   }, [])
 
   const ciudades = useMemo(() => {
-    const set = new Set(props.map(p => p.ciudad).filter(Boolean))
+    const set = new Set(['Querétaro', 'Toluca', ...props.map(p => p.ciudad).filter(Boolean)])
     return ['Todas', ...Array.from(set)]
   }, [props])
 
@@ -127,7 +127,7 @@ export default function Catalogo() {
     return props.filter(p => {
       if (filtroOperacion !== 'Todas' && p.operacion !== filtroOperacion) return false
       if (filtroTipo !== 'Todos' && p.tipo !== filtroTipo) return false
-      if (filtroCiudad !== 'Todas' && p.ciudad !== filtroCiudad) return false
+      if (filtroCiudad !== 'Todas' && !p.ciudad?.toLowerCase().includes(filtroCiudad.toLowerCase())) return false
       if (q) {
         const haystack = `${p.titulo} ${p.tipo} ${p.ciudad} ${p.colonia}`.toLowerCase()
         if (!haystack.includes(q)) return false
