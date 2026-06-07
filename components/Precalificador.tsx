@@ -191,7 +191,7 @@ export default function Precalificador() {
                 </div>
                 <div>
                   <div className="font-bold text-ink text-base">Datos del solicitante</div>
-                  <div className="text-ink-20 text-xs">Cálculos aproximados · tasas nominales 2025</div>
+                  <div className="text-ink-20 text-xs">Cálculos aproximados · tasas nominales 2026</div>
                 </div>
               </div>
 
@@ -321,7 +321,7 @@ export default function Precalificador() {
                 </div>
                 <div>
                   <div className="font-bold text-ink text-base">Crédito INFONAVIT</div>
-                  <div className="text-ink-20 text-xs">Tasas desde 1% anual según salario · 2025</div>
+                  <div className="text-ink-20 text-xs">Tasas desde 1% anual según salario · 2026</div>
                 </div>
               </div>
 

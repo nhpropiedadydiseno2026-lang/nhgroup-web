@@ -35,7 +35,7 @@ export default function Contact() {
               {[
                 { icon: Phone, label: 'Teléfono / WhatsApp', value: '+52 442 200 4936', href: 'tel:+524422004936' },
                 { icon: Mail, label: 'Email', value: 'nhernandez@nhgroup.com.mx', href: 'mailto:nhernandez@nhgroup.com.mx' },
-                { icon: MapPin, label: 'Oficina', value: 'Plaza Xentric Zibatá, Querétaro C.P 76269', href: 'https://maps.google.com/?q=Plaza+Xentric+Zibata+Queretaro' },
+                { icon: MapPin, label: 'Oficina', value: 'Plaza Xentric Zibatá, Querétaro C.P. 76269', href: 'https://maps.google.com/?q=Plaza+Xentric+Zibata+Queretaro' },
               ].map((item, i) => {
                 const Icon = item.icon
                 return (
@@ -84,7 +84,7 @@ export default function Contact() {
                 )
               })}
               <motion.a
-                href="https://app.nhgroup.com.mx/login"
+                href="https://app.nhgroup.shop/login"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.04 }}

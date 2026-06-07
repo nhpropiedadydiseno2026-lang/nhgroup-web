@@ -7,7 +7,6 @@ const footerLinks = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Servicios', href: '#servicios' },
   { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Proceso', href: '#proceso-completo' },
   { label: 'Contacto', href: '#contacto' },
 ]
 
@@ -40,7 +39,7 @@ export default function Footer() {
             <motion.a href="https://www.instagram.com/nh_propiedadydiseno/" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.15 }} aria-label="Instagram" className="text-ink-40 hover:text-gold transition-colors">
               <Instagram size={16} />
             </motion.a>
-            <motion.a href="https://app.nhgroup.com.mx/login" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} className="flex items-center gap-1.5 text-ink-40 hover:text-gold text-xs transition-colors">
+            <motion.a href="https://app.nhgroup.shop/login" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} className="flex items-center gap-1.5 text-ink-40 hover:text-gold text-xs transition-colors">
               <ExternalLink size={12} />
               Admin
             </motion.a>

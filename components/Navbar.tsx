@@ -4,17 +4,17 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
-const CLIENTE_PORTAL_URL = 'https://app.nhgroup.com.mx/?modo=cliente&vista=registro'
+const CLIENTE_PORTAL_URL = 'https://app.nhgroup.shop/?modo=cliente&vista=registro'
 
 const navLinks = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Servicios', href: '#servicios' },
   { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Proceso', href: '#proceso-completo' },
   { label: '🏦 Crédito', href: '#precalificador' },
-  { label: '👤 Portal de Clientes', href: CLIENTE_PORTAL_URL, externo: true },
   { label: 'Contacto', href: '#contacto' },
 ]
+
+const portalCliente = { label: '👤 Portal de Clientes', href: CLIENTE_PORTAL_URL, externo: true }
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -55,7 +55,6 @@ export default function Navbar() {
               <motion.a
                 key={link.href}
                 href={link.href}
-                {...(link.externo ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 whileHover={{ y: -1 }}
                 className="text-ink-60 hover:text-gold text-sm tracking-wide transition-colors duration-200 relative group font-medium"
               >
@@ -63,6 +62,17 @@ export default function Navbar() {
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full" />
               </motion.a>
             ))}
+            <motion.a
+              href={portalCliente.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="text-sm font-bold tracking-wide px-4 py-2 rounded-full text-white shadow-sm hover:shadow-md transition-all duration-300"
+              style={{ background: 'linear-gradient(135deg,#1A8F5C,#25D366)' }}
+            >
+              {portalCliente.label}
+            </motion.a>
           </div>
 
           {/* CTA */}
@@ -98,7 +108,6 @@ export default function Navbar() {
               <motion.a
                 key={link.href}
                 href={link.href}
-                {...(link.externo ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.08 }}
@@ -108,6 +117,19 @@ export default function Navbar() {
                 {link.label}
               </motion.a>
             ))}
+            <motion.a
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: navLinks.length * 0.08 }}
+              href={portalCliente.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl font-display transition-colors"
+              style={{ color: '#1A8F5C' }}
+              onClick={() => setOpen(false)}
+            >
+              {portalCliente.label}
+            </motion.a>
             <motion.a
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

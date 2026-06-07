@@ -153,7 +153,7 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
             <h2 className="font-display text-4xl md:text-5xl font-bold text-ink leading-tight mb-6">
-              Más de una década<br />
+              Más de 17 años<br />
               construyendo{' '}
               <span className="gold-gradient">confianza</span>
             </h2>
