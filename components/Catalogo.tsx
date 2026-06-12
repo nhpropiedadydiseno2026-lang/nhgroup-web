@@ -4,8 +4,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Search, MapPin, BedDouble, Bath, Maximize, ExternalLink, Building2, Loader2 } from 'lucide-react'
 
-const SUPABASE_URL = 'https://tsjykudvusxbrwspfrhn.supabase.co'
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzanlrdWR2dXN4YnJ3c3BmcmhuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk2NzM1NzEsImV4cCI6MjA5NTI0OTU3MX0.N9aHc0sNH8ETDQUnq5aYebugWYq0k7sXsFmG5iGxMHo'
+const SUPABASE_URL = 'https://volhnmuomklxhylxttbu.supabase.co'
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZvbGhubXVvbWtseGh5bHh0dGJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyMjMxNjYsImV4cCI6MjA5Njc5OTE2Nn0.7E8fiiRfuBoumGP-fZob2yeahVYfMVFx59YAqhcgwO0'
 
 const INMUEBLES24_URL = 'https://www.inmuebles24.com/inmobiliarias/proyecto-inmobiliario_50251463-inmuebles.html'
 
@@ -47,24 +47,25 @@ export default function Catalogo() {
     async function cargarCRM(): Promise<Propiedad[]> {
       try {
         const r = await fetch(
-          `${SUPABASE_URL}/rest/v1/propiedades?select=id,titulo,tipo,operacion_tipo,precio,moneda,status,ciudad,colonia,recamaras,banos,m2_construccion,m2_terreno,fotos&status=eq.disponible&order=destacada.desc,created_at.desc&limit=60`,
+          `${SUPABASE_URL}/rest/v1/propiedades?select=id,nombre,tipo,operacion,precio,moneda,estado,direccion,hab,banos,m2,fotos&estado=eq.disponible&order=created_at.desc&limit=200`,
           { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}` } }
         )
         if (!r.ok) return []
         const data = await r.json()
+        const cap = (s: string) => s ? s.trim().charAt(0).toUpperCase() + s.trim().slice(1) : ''
         return (Array.isArray(data) ? data : []).map((p: any): Propiedad => ({
           id: `crm-${p.id}`,
           fuente: 'CRM',
-          titulo: p.titulo,
-          tipo: p.tipo || 'Propiedad',
-          operacion: p.operacion_tipo || 'Venta',
+          titulo: p.nombre,
+          tipo: cap(p.tipo) || 'Propiedad',
+          operacion: (p.operacion || '').toLowerCase().startsWith('alq') || (p.operacion || '').toLowerCase().startsWith('rent') ? 'Renta' : 'Venta',
           precio: Number(p.precio) || 0,
           moneda: p.moneda || 'MXN',
-          ciudad: p.ciudad || '',
-          colonia: p.colonia || '',
-          recamaras: p.recamaras || 0,
-          banos: p.banos || 0,
-          m2: p.m2_construccion || p.m2_terreno || null,
+          ciudad: cap(p.direccion) || '',
+          colonia: '',
+          recamaras: Number(p.hab) || 0,
+          banos: Number(p.banos) || 0,
+          m2: Number(p.m2) || null,
           foto: Array.isArray(p.fotos) && p.fotos.length > 0 ? (typeof p.fotos[0] === 'string' ? p.fotos[0] : p.fotos[0]?.url) : null,
           link: null,
         }))
